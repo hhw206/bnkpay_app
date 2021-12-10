@@ -1,5 +1,4 @@
-package com.bnk.pay;
-
+//package com.bnk.pay;
 //
 //import org.springframework.context.annotation.Bean;
 //import org.springframework.context.annotation.Configuration;
@@ -12,14 +11,15 @@ package com.bnk.pay;
 //
 //@Configuration
 //@EnableSwagger2
-public class SwaggerConfig {
-//	@Bean
-//	public Docket postsApi() {
+//public class SwaggerConfig {
+//
+//// 기본 swagger 선언
+//@Bean
+//	public Docket api() {
 //		return new Docket(DocumentationType.SWAGGER_2)
-//				.select()
-//				.apis(RequestHandlerSelectors.basePackage("com.bnk"))
-//				.paths(PathSelectors.any())
-//				.build();
+//			.select()
+//			.apis(RequestHandlerSelectors.any())
+//			.paths(PathSelectors.any())
+//			.build();
 //	}
-
-}
+//}
