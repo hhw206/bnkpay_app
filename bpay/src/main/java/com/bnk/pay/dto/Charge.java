@@ -1,5 +1,23 @@
 package com.bnk.pay.dto;
 
-public class Charge {
+import java.time.LocalDateTime;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity
+@Table(name = "tb_charge")
+public class Charge {
+	@Id
+	private int idx;
+	private int amount;
+	private LocalDateTime dtti;
 }
