@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">bnkpay_app</string>
+    <string name="app_name">부누키 Pay</string>
+    <string name="join_desc"><b>회원가입을 위해</b> <br></br>\n고객님의 정보를 입력해주세요</string>
+    <string name="user_name">이름</string>
+    <string name="user_id">아이디</string>
+    <string name="user_pw">비밀번호</string>
+    <string name="certify">인증하기</string>
+    <string name="connect">연결하기</string>
 </resources>
