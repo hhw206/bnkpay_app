@@ -11,4 +11,6 @@ import com.bnk.pay.dto.User;
 public interface UserDao extends JpaRepository<User, String> {
 
 	Optional<User> findByUsernameAndPassword(String username, String password);
+
+	User findByUsername(String username);
 }
