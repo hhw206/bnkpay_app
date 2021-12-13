@@ -4,6 +4,7 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
+import com.bnk.pay.controller.AccountController;
 import com.bnk.pay.dao.UserDao;
 import com.bnk.pay.dto.Login;
 import com.bnk.pay.dto.User;
@@ -14,7 +15,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService{
 	private final UserDao userDao;
-	
+	private final AccountController accountController;
 	@Override
 	public User signUp(UserRequest userRequest) {
 		User user = new User();
@@ -22,6 +23,13 @@ public class UserServiceImpl implements UserService{
 		user.setPassword(userRequest.getPassword());
 		user.setToken(userRequest.getToken());
 		user.setUsername(userRequest.getUsername());
+		user.setUse_yn('Y');
+		user.setUser_sn(userRequest.getUser_sn());
+		user.setUser_dv('1');
+		
+		accountController.createAccount(userRequest.getUser_sn());
+		
+		
 		// TO DO
 		// 추가 정보 기입.
 		return userDao.save(user);

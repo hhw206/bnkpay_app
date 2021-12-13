@@ -26,12 +26,15 @@ public class UserController {
  	@PostMapping(value = "/signup")
     public ResponseEntity<HashMap<String,Object>> signup(@RequestBody UserRequest userRequest) {
  		HashMap<String,Object> ret = new HashMap<>();
+ 		System.out.println("test");
         try {
                 User user = userService.signUp(userRequest);
                 ret.put("user", user);
                 return new ResponseEntity<>(ret, HttpStatus.OK);
             }
         catch (Exception e) {
+        	System.out.println(e);
+        	System.out.println("Error");
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }

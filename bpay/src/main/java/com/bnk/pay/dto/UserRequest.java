@@ -17,4 +17,5 @@ public class UserRequest {
     private String password;
     private String name;
     private String token;
+    private String user_sn;
 }

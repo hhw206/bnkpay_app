@@ -15,6 +15,7 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idx;
 	@Column(unique = true)
+
     private String username; // 유저 id
     private String password;
     private String name;     // 실제 이름
