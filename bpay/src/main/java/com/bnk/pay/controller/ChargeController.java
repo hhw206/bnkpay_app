@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.bnk.pay.dto.Charge;
 import com.bnk.pay.dto.UserRequest;
 import com.bnk.pay.service.ChargeService;
+import com.bnk.pay.service.ChargeServiceImpl;
 
 import lombok.RequiredArgsConstructor;
 @CrossOrigin(origins = "*")
@@ -20,18 +21,16 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 @RequestMapping("/Charge")
 public class ChargeController {
-	private final ChargeService chargeService;
-	//TODO charge 구현
- 	@PostMapping(value = "/charge")
-    public ResponseEntity<HashMap<String,Object>> charge(@RequestBody UserRequest) {
- 		HashMap<String,Object> ret = new HashMap<>();
-        try {
-                Charge charge = chargeService.;
-                ret.put("user", user);
-                return new ResponseEntity<>(ret, HttpStatus.OK);
-            }
-        catch (Exception e) {
-            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-    }
+//	private final ChargeServiceImpl chargeServiceImpl;
+// 	@PostMapping(value = "/charge")
+//    public ResponseEntity<HashMap<String,Object>> charge(@RequestBody UserRequest user) {
+// 		HashMap<String,Object> ret = new HashMap<>();
+//        try {
+//                ret.put("user", user);
+//                return new ResponseEntity<>(ret, HttpStatus.OK);
+//            }
+//        catch (Exception e) {
+//            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+//        }
+//    }
 }
