@@ -10,6 +10,6 @@ import lombok.RequiredArgsConstructor;
 public interface AccountService {
 	public Optional<Test> readTest(int id);
 	public Optional<Account> balance(String id);
-	public int remit(String mid,String oid,int money);
+	public int remit(String msn,String osn,int amount);
 	public void createAccount(String id);
 }

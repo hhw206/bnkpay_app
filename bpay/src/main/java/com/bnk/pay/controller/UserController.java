@@ -43,10 +43,12 @@ public class UserController {
     	HashMap<String,Object> ret = new HashMap<>();
         try {
                 User user = userService.signIn(login);
+                
                 ret.put("user", user);
                 return new ResponseEntity<>(ret, HttpStatus.OK);
             }
         catch (Exception e) {
+        	System.out.println(e);
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }

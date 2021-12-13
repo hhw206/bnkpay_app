@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.bnk.pay.config.PrincipalDetails;
 import com.bnk.pay.dto.CMRespDto;
 import com.bnk.pay.service.SubscribeServiceImpl;
 
@@ -22,14 +23,14 @@ public class SubscribeController {
 	@PostMapping("api/subscribe/{toUserId}")
 	public ResponseEntity<?> subscribe(@AuthenticationPrincipal  PrincipalDetails principalDetails,
 			@PathVariable int toUserId) {
-		subscribeServiceImpl.구독하기(principalDetails.getUser().getId(), toUserId);
+		subscribeServiceImpl.구독하기(principalDetails.getUser().getIdx(), toUserId);
 		return new ResponseEntity<>(new CMRespDto<>(1,"구독하기 성공",null),HttpStatus.OK);
 	}
 	
 	@DeleteMapping("api/subscribe/{toUserId}")
 	public ResponseEntity<?> unSubscribe(@AuthenticationPrincipal  PrincipalDetails principalDetails,
 			@PathVariable int toUserId) {
-		subscribeServiceImpl.구독취소하기(principalDetails.getUser().getId(), toUserId);
+		subscribeServiceImpl.구독취소하기(principalDetails.getUser().getIdx(), toUserId);
 		return new ResponseEntity<>(new CMRespDto<>(1,"구독취소하기 성공",null),HttpStatus.OK);
 	}
 
