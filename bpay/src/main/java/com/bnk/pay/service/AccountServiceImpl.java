@@ -43,7 +43,8 @@ public class AccountServiceImpl implements AccountService {
 	public void createAccount(String id) {
 		Account acc = new Account();
 		acc.setUserid(id);
-		
+		acc.setBalance(0);
+		acc.setUseyn('Y');
 		accountDao.save(acc);
 		
 	}
