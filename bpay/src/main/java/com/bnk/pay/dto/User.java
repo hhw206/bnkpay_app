@@ -11,16 +11,17 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Entity(name = "tb_user")
 public class User {
-    @Id
-    //@GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String idx;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int idx;
+	@Column(unique = true)
     private String username; // 유저 id
     private String password;
     private String name;     // 실제 이름
     private char user_dv;  
     private char use_yn;
-    private String phone_number;
-    private String account_number;
+    private String user_sn;
     private String token;
+
     
 }
