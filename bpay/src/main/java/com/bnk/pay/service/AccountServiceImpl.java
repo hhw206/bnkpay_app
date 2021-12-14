@@ -26,19 +26,19 @@ public class AccountServiceImpl implements AccountService {
 
 	@Override
 	public Optional<Account> balance(String id) {
-		return accountDao.findByUserid(id);
+		return accountDao.findByUserSn(id);
 	}
 
 	@Override
 	public int remit(String msn, String osn, int amount) {
-		Account mine = accountDao.findByUserid(msn).get();
+		Account mine = accountDao.findByUserSn(msn).get();
 		if(mine.getBalance()<amount) // 계좌 잔액 부족
 			return -1;
 		mine.setBalance(mine.getBalance()-amount);
 		mine.setLastchangedtti(LocalDateTime.now());
 		accountDao.save(mine);
 		
-		Account other = accountDao.findByUserid(osn).get();
+		Account other = accountDao.findByUserSn(osn).get();
 		other.setBalance(other.getBalance()-amount);
 		other.setLastchangedtti(LocalDateTime.now());
 		accountDao.save(other);
@@ -47,7 +47,7 @@ public class AccountServiceImpl implements AccountService {
 
 	public void createAccount(String id) { // 계좌생성
 		Account acc = new Account();
-		acc.setUserid(id);
+		acc.setUserSn(id);
 		acc.setBalance(0);
 		acc.setUseyn('Y');
 		acc.setJoindtti(LocalDateTime.now());

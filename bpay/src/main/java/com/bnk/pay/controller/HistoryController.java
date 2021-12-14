@@ -41,7 +41,7 @@ public class HistoryController {
 		try {
 			logger.info("history in");
 			History his = new History();
-			his.setUser_sn(user_sn);
+			his.setUserSn(user_sn);
 			his.setAmount(amount);
 			his.setDtti(LocalDateTime.now());
 			his.setWorkdv(workdv);
@@ -54,12 +54,12 @@ public class HistoryController {
 		try {
 			logger.info("history in");
 			History his = new History();
-			his.setUser_sn(user_sn);
+			his.setUserSn(user_sn);
 			his.setAmount(amount);
 			his.setDtti(LocalDateTime.now());
 			his.setWorkdv(workdv);
-			his.setOther_user_id(other_user_id);
-			his.setOther_user_name(other_user_name);
+			his.setOtherUserId(other_user_id);
+			his.setOtherUserName(other_user_name);
 			historyServiceImpl.save(his);
 		} catch (Exception e) {
 			logger.info(e.toString());

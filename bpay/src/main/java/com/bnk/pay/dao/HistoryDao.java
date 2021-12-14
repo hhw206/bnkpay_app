@@ -10,6 +10,6 @@ import com.bnk.pay.dto.History;
 
 public interface HistoryDao extends JpaRepository<History, Integer> {
 	
-	List<History> findByWorkdvAndUser_sn(String code,String user_sn);
+	List<History> findByWorkdvAndUserSn(String code,String user_sn);
 	
 }

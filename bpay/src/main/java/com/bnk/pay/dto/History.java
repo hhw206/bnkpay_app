@@ -17,9 +17,9 @@ import lombok.NoArgsConstructor;
 public class History {
 	@Id
 	private int idx;
-	private String other_user_name;
-	private String other_user_id;
-	private String user_sn;
+	private String otherUserName;
+	private String otherUserId;
+	private String userSn;
 	private int amount;
 	private String workdv;
 	private LocalDateTime dtti;

@@ -22,7 +22,7 @@ public class HistoryServiceImpl implements HistoryService{
 		if(code.equals("all")) { // all
 			return historyDao.findAll();
 		}else{ // deposit : 입금
-			return historyDao.findByWorkdvAndUser_sn(code,user_sn);
+			return historyDao.findByWorkdvAndUserSn(code,user_sn);
 		}
 	}
 
