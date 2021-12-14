@@ -58,6 +58,7 @@ public class UserController {
                 return new ResponseEntity<>(ret, HttpStatus.OK);
             }
         catch (Exception e) {
+        	System.out.println(e);
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
