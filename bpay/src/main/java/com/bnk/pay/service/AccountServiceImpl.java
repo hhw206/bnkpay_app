@@ -50,6 +50,7 @@ public class AccountServiceImpl implements AccountService {
 		acc.setUserid(id);
 		acc.setBalance(0);
 		acc.setUseyn('Y');
+		acc.setJoindtti(LocalDateTime.now());
 		acc.setLastchangedtti(LocalDateTime.now());
 		accountDao.save(acc);
 		
