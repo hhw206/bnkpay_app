@@ -15,14 +15,12 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idx;
 	@Column(unique = true)
-
     private String username; // 유저 id
     private String password;
     private String name;     // 실제 이름
     private char user_dv;  
     private char use_yn;
-    private String user_sn;
+    private String userSn;
     private String token;
-
     
 }
