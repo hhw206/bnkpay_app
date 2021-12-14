@@ -17,7 +17,7 @@ import lombok.NoArgsConstructor;
 
 public class Account {
 	@Id
-	String userid;
+	String userSn;
 	int balance;
 	LocalDateTime lastchangedtti;
 	LocalDateTime joindtti;
