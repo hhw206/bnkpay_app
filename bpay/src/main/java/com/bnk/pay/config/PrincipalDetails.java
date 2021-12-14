@@ -49,10 +49,10 @@ public class PrincipalDetails implements UserDetails{
    public boolean isEnabled() {
       return true;
    }
-@Override
-public Collection<? extends GrantedAuthority> getAuthorities() {
-	// TODO Auto-generated method stub
-	return null;
-}
+	@Override
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }

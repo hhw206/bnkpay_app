@@ -7,9 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class CMRespDto <T>{
-	private int code;
-	private String message;
-	private T data;
-
+public class SubscribeRequest {
+	private String username;
+	private int toUserId;
 }
