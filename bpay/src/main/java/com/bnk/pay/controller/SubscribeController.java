@@ -27,7 +27,7 @@ public class SubscribeController {
 	public ResponseEntity<?> subscribe(@RequestBody SubscribeRequest subscribeRequest) {
 		System.out.println("========================");
 		System.out.println(subscribeRequest);
-		subscribeServiceImpl.구독하기(subscribeRequest.getUsername(),subscribeRequest.getToUserId());
+		subscribeServiceImpl.구독하기(subscribeRequest.getUser_sn(),subscribeRequest.getUsername());
 		return new ResponseEntity<>(new CMRespRequest<>(1,"구독하기 성공",null),HttpStatus.OK);
 
 
