@@ -8,7 +8,7 @@ import com.bnk.pay.dto.Subscribe;
 
 public interface SubscribeDao extends JpaRepository<Subscribe, Integer>{
 	@Modifying // insert , delete, update 를 네이티브 쿼리로 작성하려면 해당 어노테이션 필요
-	@Query(value = "INSERT INTO subscribe(fromUserId,toUserId,createDate) VALUES(:fromUserId,:toUserId,now())",nativeQuery = true)
+	@Query(value = "INSERT INTO subscribe(from_user_id,to_user_id,create_date) VALUES(:fromUserId,:toUserId,now())",nativeQuery = true)
 	void mSubscribe(int fromUserId, int toUserId);
 	
 	@Modifying

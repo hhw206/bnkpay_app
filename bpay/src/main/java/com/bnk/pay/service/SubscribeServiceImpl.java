@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import com.bnk.pay.dao.SubscribeDao;
 import com.bnk.pay.dao.UserDao;
 import com.bnk.pay.dto.User;
+import com.bnk.pay.handler.ex.CustomApiException;
 
 import lombok.RequiredArgsConstructor;
 
@@ -17,17 +18,18 @@ public class SubscribeServiceImpl implements SubscribeService {
 	private final SubscribeDao subscribeDao;
 	private final UserDao userDao;
 	@Transactional
-	public void 구독하기(String username, int toUserId) {
-		User user = userDao.findByUsername(username);
+	public void 구독하기(String user_sn, String username) {
+		User fromUser = userDao.findByUserSn(user_sn);
+		User toUser = userDao.findByUsername(username);
 		System.out.println("====================");
-		System.out.println(user);
-		int fromUserId = user.getIdx();
-		System.out.println(fromUserId);
-		System.out.println(toUserId);
+		System.out.println(toUser.getIdx());
+		System.out.println(fromUser.getIdx());
+		int fromUserId = toUser.getIdx();
+		int toUserId = fromUser.getIdx();
 		try {
 			subscribeDao.mSubscribe(fromUserId, toUserId);
 		} catch (Exception e) {
-			throw new RuntimeException("이미 구독을 하였습니다.");
+			throw new CustomApiException("이미 구독을 하였습니다.");
 		}
 		
 	}

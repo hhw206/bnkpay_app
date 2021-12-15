@@ -8,6 +8,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class SubscribeRequest {
+	private String user_sn;
 	private String username;
-	private int toUserId;
 }
