@@ -19,7 +19,7 @@ import lombok.NoArgsConstructor;
 public class Charge {
 	
 	@Id
-	@Column(name = "user_sn")
+	private int idx;
 	private String userSn;
 	private int amount;
 	private LocalDateTime dtti;
