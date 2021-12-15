@@ -12,10 +12,10 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/join_btn"
+            android:id="@+id/login_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="회원가입"
+            android:text="로그인"
             app:backgroundTint="@color/bnk_light_gray"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -63,9 +63,10 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
+            android:id="@+id/charge_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="잔액충전/잔액출금"
+            android:text="잔액충전"
             app:backgroundTint="@color/bnk_light_gray"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
