@@ -16,8 +16,10 @@ import lombok.NoArgsConstructor;
 @Entity
 
 public class Account {
+	
 	@Id
-	String userid;
+	@Column(name = "user_sn")
+	String userSn;
 	int balance;
 	LocalDateTime lastchangedtti;
 	LocalDateTime joindtti;
