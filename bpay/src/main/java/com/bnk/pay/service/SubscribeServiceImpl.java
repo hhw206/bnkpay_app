@@ -24,8 +24,8 @@ public class SubscribeServiceImpl implements SubscribeService {
 		System.out.println("====================");
 		System.out.println(toUser.getIdx());
 		System.out.println(fromUser.getIdx());
-		int fromUserId = toUser.getIdx();
-		int toUserId = fromUser.getIdx();
+		int fromUserId = fromUser.getIdx();
+		int toUserId = toUser.getIdx();
 		try {
 			subscribeDao.mSubscribe(fromUserId, toUserId);
 		} catch (Exception e) {
